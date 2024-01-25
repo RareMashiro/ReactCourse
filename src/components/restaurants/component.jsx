@@ -11,13 +11,13 @@ export const Restaurants = ({place}) => {
             <h3 className='menu-title'><span>Меню</span></h3>
             <ul className='menu'>
                 {place.menu.map(pos => {
-                    return <Dish dish={pos} />
+                    return <li className='menu-item'><Dish dish={pos} /></li>
                 })}
             </ul>
             <h3 className='review-title'><span>Отзывы</span></h3>
             <ul className='review'>
                 {place.reviews.map(pos => {
-                    return <Review review={pos} />
+                    return <li className='review-item'><Review review={pos} /></li>
                 })}
             </ul>
         </div>

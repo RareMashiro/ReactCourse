@@ -1,3 +1,5 @@
 export const Dish = ({dish}) => {
-    return (<li className='menu-item'>{[dish.name, ': ', dish.price, '$']}</li>)
+    return (
+        <p>{[dish.name, ': ', dish.price, '$']}</p>
+    )
 }
