@@ -1,0 +1,14 @@
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 0;
+}
+
+.isOpen {
+    display: block;
+}
+
+.open {
+    background-color: white;
+    color: black;
+}

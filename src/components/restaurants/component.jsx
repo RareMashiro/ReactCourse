@@ -1,25 +1,19 @@
 /* eslint-disable react/jsx-key */
-import { Dish } from "../dish/component"
-import { Review } from "../review/component"
+import { Reviews } from "../reviews/component";
+import { Menu } from "../menu/component";
+import { Title } from "../title/component";
+import classNames from "classnames";
 import './styles.scss';
 
 /* eslint-disable react/prop-types */
 export const Restaurants = ({place}) => {
     return (
-        <div className='restaurant'>
-            <h1 className='restaurant-name'>{place.name}</h1>
-            <h3 className='menu-title'><span>Меню</span></h3>
-            <ul className='menu'>
-                {place.menu.map(pos => {
-                    return <li className='menu-item'><Dish dish={pos} /></li>
-                })}
-            </ul>
-            <h3 className='review-title'><span>Отзывы</span></h3>
-            <ul className='review'>
-                {place.reviews.map(pos => {
-                    return <li className='review-item'><Review review={pos} /></li>
-                })}
-            </ul>
+        <div className={classNames(place.name, 'isClose', 'main')}>
+            <h1><Title title={place}/></h1>
+            <h3 className='menu-title'><span>Menu</span></h3>
+            <Menu menu={place.menu} />
+            <h3 className='review-title'><span>Reviews</span></h3>
+            <Reviews reviews={place.reviews}/>
         </div>
     )
 }

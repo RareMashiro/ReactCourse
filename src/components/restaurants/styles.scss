@@ -1,9 +1,10 @@
-.restaurant {
+.main {
     font-family: 'Times New Roman', Times, serif;
+    margin-top: -2.5em;
 }
 
-.restaurant-name {
-    margin-top: 1.5em;
+h1 {
+    margin-bottom: -0.4em;
 }
 
 .menu-title {
@@ -18,12 +19,9 @@
     border-radius: 3px;
 }
 
-// .menu {
-//     background-image: linear-gradient(to right, lightgray, white);
-// }
-
 .menu > li {
     font-weight: bold;
+    margin: -0.5em 0;
 }
 
 .review-title {
@@ -38,11 +36,11 @@
     border-radius: 3px;
 }
 
-// .review {
-//     background-image: linear-gradient(to right, lightgray, white);
-// }
-
-.review > li {
+.review-item {
     font-weight: bold;
     list-style-type: circle;
+}
+
+.isClose {
+    display: none;
 }

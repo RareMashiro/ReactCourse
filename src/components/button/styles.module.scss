@@ -1,0 +1,34 @@
+.large {
+    font-size: 1.6rem;
+    background-color: black;
+    color: white;
+}
+
+.large:active {
+    background-color: aquamarine;
+    color: black;
+}
+
+.small {
+    background-color: black;
+    color: white;
+}
+
+.small:active {
+    background-color: gold;
+    color: black;
+}
+
+Button {
+    padding: 0.4em 1.6em;
+    border-radius: 0.4em;
+}
+
+Button:hover {
+    border-color: red;
+}
+
+.blocked {
+    background-color: white;
+    color: black;
+}
