@@ -19,6 +19,11 @@
     color: black;
 }
 
+.small:disabled {
+    background-color: white;
+    color: black;
+}
+
 Button {
     padding: 0.4em 1.6em;
     border-radius: 0.4em;
@@ -26,9 +31,4 @@ Button {
 
 Button:hover {
     border-color: red;
-}
-
-.blocked {
-    background-color: white;
-    color: black;
 }
