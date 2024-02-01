@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RestaurantTabs } from "../../components/restaurant-tabs/component"
 import { Restaurant } from "../../components/restaurant/component"
 import { restaurants } from "../../../materials/mock"
+
 export const RestaurantPage = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState();
     
@@ -10,13 +11,13 @@ export const RestaurantPage = () => {
     )
     
     return (
-        <div> 
+        <div>
             <RestaurantTabs 
                 restaurants={restaurants} 
                 onSelect={setActiveRestaurantId}
             />
             {activeRestaurant && 
-                <Restaurant restaurants={activeRestaurant} 
+                <Restaurant restaurant={activeRestaurant} 
             />}
         </div>
     )
