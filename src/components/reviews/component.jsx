@@ -2,7 +2,8 @@
 import { ReviewForm } from "../review-form/component"
 import { Review } from "../review/component"
 
-export const Reviews = ({reviews}) => {
+export const Reviews = ({reviews, key}) => {
+    
     return (
         <div>    
             <ul>
@@ -14,7 +15,7 @@ export const Reviews = ({reviews}) => {
                         )
                     })}
             </ul>
-            <ReviewForm />
+            <ReviewForm key={key}/>
         </div>
     )
 }

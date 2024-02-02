@@ -17,7 +17,7 @@ export const RestaurantPage = () => {
                 onSelect={setActiveRestaurantId}
             />
             {activeRestaurant && 
-                <Restaurant restaurant={activeRestaurant} 
+                <Restaurant restaurant={activeRestaurant} key={activeRestaurantId}
             />}
         </div>
     )

@@ -30,11 +30,11 @@ const reducer = (state, {type, payload}) => {
     }
 }
 
-export const ReviewForm = () => {
+export const ReviewForm = ({key}) => {
     const [form, dispatch] = useReducer(reducer, DEFAULT);
     
     return (
-        <div className={styles.main}>
+        <div className={styles.main} key={key}>
             <div className={styles.section}>
                 <label htmlFor="name" className={styles.label}>Name: </label>
                 <input id="name" type="text" value={form.name} onChange={(evt) => 
