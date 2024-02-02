@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-key */
 import { Reviews } from "../reviews/component";
 import { Menu } from "../menu/component";
-import './styles.scss';
+//import './styles.scss';
 import { Name } from "../name/component";
+import { ReviewForm } from "../review-form/component";
 
 /* eslint-disable react/prop-types */
 export const Restaurant = ({restaurant}) => {
@@ -13,6 +14,7 @@ export const Restaurant = ({restaurant}) => {
             <Menu menu={restaurant.menu} />
             <h3 className='review-title'><span>Reviews</span></h3>
             <Reviews reviews={restaurant.reviews}/>
+            <ReviewForm />
         </div>
     )
 }
