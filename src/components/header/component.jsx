@@ -1,5 +1,13 @@
-import './styles.scss';
+import { Login } from '../login/component';
+import styles from'./styles.module.scss';
 
-export const Header = ({children}) => {
-    return <header className='header'>{children}</header>
+export const Header = ({children}) => {    
+    return (
+        <header className={styles.header}>
+            <span className={styles.content}>{children}</span>
+            <div>
+                <Login />
+            </div>
+        </header>
+    )
 }
