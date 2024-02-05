@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import { Header } from "../header/component"
 import { Footer } from "../footer/component"
 
-export const Layout = ({children}) => {
+
+export const Layout = ({children}) => {    
     return (
         <div>
             <Header>Header</Header>
