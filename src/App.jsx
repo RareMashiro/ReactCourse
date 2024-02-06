@@ -1,11 +1,17 @@
 /* eslint-disable react/jsx-key */
+import { useState } from "react"
+import { UserContext } from "../contexts/user"
 import { Layout } from "./components/layout/component"
 import { RestaurantPage } from "./pages/restaurant-page/component"
 
 export const App = () => {
+    const [user, setUser] = useState();
+    
     return (
-        <Layout>
-            <RestaurantPage />
-        </Layout>
+        <UserContext.Provider value={{user, setUser}}>
+            <Layout>
+                <RestaurantPage />
+            </Layout>
+        </UserContext.Provider>
     )
 }

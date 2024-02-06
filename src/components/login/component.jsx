@@ -1,24 +1,22 @@
+import { useContext } from 'react';
+import { UserContext } from '../../../contexts/user';
 import { Button } from '../button/component';
-import { person } from '../../../materials/person';
-import styles from './styles.module.scss' ;
-import { VisibleContext } from '../../../contexts/visible';
-import { useState } from 'react';
+import styles from './styles.module.scss';
+
 
 export const Login = () => {
-    const [title, setTitle] = useState('Login');
-    const [isVisible, setIsVisible] = useState('');
-
-    const authorization = () => {
-        title === 'Login' ? setTitle('Exit') : setTitle('Login');
-        setIsVisible(isVisible === '' ? 'hidden' : '');
-    }
-
+    const {user, setUser} = useContext(UserContext);
+    
     return (
-        <VisibleContext.Provider value={isVisible}>
-            <div className={styles.login}>
-                {title === 'Exit' ? <span>{person.name}</span> : <></>}
-                <Button onClick={authorization}>{title}</Button>
-            </div>
-        </VisibleContext.Provider>
+        <div>
+            {user ? (
+                <div className={styles.logout}>
+                    <span>{user}</span>
+                    <Button onClick={() => setUser(null)}>Logout</Button>
+                </div>
+            ) : (
+                <Button onClick={() => setUser('William')}>Login</Button>
+            )}
+        </div>
     )
 }
