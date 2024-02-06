@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { useContext } from "react"
 import { ReviewForm } from "../review-form/component"
