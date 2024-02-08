@@ -11,6 +11,7 @@ export const Layout = ({children}) => {
             <Header>Header</Header>
             <div className={styles.content}>{children}</div>
             <Footer>Footer</Footer>
+            <div id="modal-container"/>
         </div>
     )
 }

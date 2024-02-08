@@ -5,7 +5,7 @@ export const Header = ({children}) => {
     return (
         <header className={styles.header}>
             <span className={styles.content}>{children}</span>
-            <div>
+            <div className={styles.loginStatus}>
                 <Login />
             </div>
         </header>
