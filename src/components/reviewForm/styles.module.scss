@@ -1,0 +1,17 @@
+.main {
+   margin: auto;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    padding: 0.3em 0;
+    letter-spacing: 0.04em;
+}
+
+input:active {
+    border: 2px solid black;
+}
