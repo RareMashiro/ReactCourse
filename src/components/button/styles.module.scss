@@ -15,13 +15,17 @@
 }
 
 .small:active {
-    background-color: gold;
+    background-color: aquamarine;
     color: black;
 }
 
 .small:disabled {
-    background-color: white;
+    background-color: gold;
     color: black;
+}
+
+.small:disabled:hover {
+    border-color: initial;
 }
 
 Button {
@@ -30,5 +34,5 @@ Button {
 }
 
 Button:hover {
-    border-color: red;
+    border-color: white;
 }
