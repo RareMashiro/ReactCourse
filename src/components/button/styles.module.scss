@@ -1,22 +1,5 @@
 .large {
     font-size: 1.6rem;
-    background-color: black;
-    color: white;
-}
-
-.large:active {
-    background-color: aquamarine;
-    color: black;
-}
-
-.small {
-    background-color: black;
-    color: white;
-}
-
-.small:active {
-    background-color: aquamarine;
-    color: black;
 }
 
 .small:disabled {
@@ -29,6 +12,8 @@
 }
 
 Button {
+    background-color: #043acf;
+    color: white;
     padding: 0.4em 1.6em;
     border-radius: 0.4em;
     cursor: pointer;
@@ -36,4 +21,9 @@ Button {
 
 Button:hover {
     border-color: white;
+}
+
+Button:active {
+    background-color: gold;
+    color: black;
 }
