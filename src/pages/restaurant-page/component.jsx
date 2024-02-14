@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RestaurantTabs } from "../../components/restaurant-tabs/component"
 import { Restaurant } from "../../components/restaurant/component"
 import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../../redux/entities/restaurant/selectors";
+import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors";
 
 export const RestaurantPage = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState();

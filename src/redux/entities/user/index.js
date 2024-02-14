@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { normalizedUsers } from "../../../materials/normalized-mock";
+import { normalizedUsers } from "../../../../materials/normalized-mock";
 
 export const userSlice = createSlice({
     name: 'user',

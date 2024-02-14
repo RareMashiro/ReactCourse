@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { normalizedReviews } from "../../../materials/normalized-mock";
+import { normalizedReviews } from "../../../../materials/normalized-mock";
 
 export const reviewSlice = createSlice({
     name: 'review',

@@ -3,7 +3,7 @@ import { Reviews } from "../reviews/component";
 import { Menu } from "../menu/component";
 import { Name } from "../name/component";
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../../redux/entities/restaurant/selectors";
+import { selectRestaurantById } from "../../redux/entities/restaurant/selectors";
 
 /* eslint-disable react/prop-types */
 export const Restaurant = ({ id }) => {

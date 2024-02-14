@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
-import { selectReviewById } from "../../../redux/entities/review/selectors";
-import { selectUserById } from "../../../redux/entities/user/selectors";
+import { selectReviewById } from "../../redux/entities/review/selectors";
+import { selectUserById } from "../../redux/entities/user/selectors";
 
 export const Review = ({id}) => {
     const review = useSelector((state) => selectReviewById(state, id));

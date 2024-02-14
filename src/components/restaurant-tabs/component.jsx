@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux"
 import { Tab } from "../tab/component"
-import { selectRestaurantIds } from "../../../redux/entities/restaurant/selectors"
+import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors"
 
 export const RestaurantTabs = ({onSelect}) => {
     const restaurantIds = useSelector(selectRestaurantIds);

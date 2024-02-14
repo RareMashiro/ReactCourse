@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { selectRestaurantById } from "../../../redux/entities/restaurant/selectors"
+import { selectRestaurantById } from "../../redux/entities/restaurant/selectors"
 import { Button } from "../button/component"
 import { useSelector } from "react-redux";
 
