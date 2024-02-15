@@ -7,6 +7,7 @@ import { Name } from "../name/component";
 /* eslint-disable react/prop-types */
 export const Restaurant = ({ restaurant }) => {
 
+    console.log(restaurant.id);
     return (
         <div>
             <Name place={restaurant} />
