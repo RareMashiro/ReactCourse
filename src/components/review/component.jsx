@@ -10,6 +10,8 @@ export const Review = ({id}) => {
 
 
     return (
-        <p>{[user.name, ': ', review.text]}</p>
+        <>
+            {user ? <p>{[user.name, ': ', review.text]}</p> : <p>{['*Secret*: ', review.text]}</p> }
+        </>
     )
 }

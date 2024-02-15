@@ -1,16 +1,12 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-import { useSelector } from "react-redux"
-import { Tab } from "../tab/component"
-import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors"
+import { RestaurantTabContainer } from "../restaurant-tab/container"
 
-export const RestaurantTabs = ({onSelect}) => {
-    const restaurantIds = useSelector(selectRestaurantIds);
-    
-    return (
+export const RestaurantTabs = ({ restaurantIds, onSelect }) => {
+        return (
         <div>
             {restaurantIds.map((id) => (
-                <Tab id={id} className="large" onClick={() => onSelect(id)} />
+                <RestaurantTabContainer restaurantId={id} className="large" onClick={() => onSelect(id)} />
             ))}
         </div>
     )

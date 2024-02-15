@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ReviewForm } from "../review-form/component"
 import { Review } from "../review/component"
 import { UserContext } from "../../../contexts/user"
+import { useDispatch } from "react-redux"
+import { getReviews } from "../../redux/entities/review/thunks/get-reviews";
 
 export const Reviews = ({reviews, key}) => {
     const {user} = useContext(UserContext);
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getReviews())
+    }, [dispatch])
+
 
     return (
         <div>    
