@@ -8,11 +8,11 @@ const DEFAULT = {
 
 const reducer = (state, {type, payload}) => {
     switch(type) {
-        case 'setName':
-            return {
-                ...DEFAULT,
-                name: payload,
-            };
+        // case 'setName':
+        //     return {
+        //         ...DEFAULT,
+        //         name: payload,
+        //     };
         case 'setText':
             return {
                 ...state,
@@ -30,7 +30,7 @@ const reducer = (state, {type, payload}) => {
 
 export const useReviewForm = (initialValue = DEFAULT) => {
     const [form, dispatch] = useReducer(reducer, initialValue);
-    const name = form.name;
+    //const name = form.name;
     console.log(form);
     
     const setName = useCallback(
@@ -39,19 +39,13 @@ export const useReviewForm = (initialValue = DEFAULT) => {
     );
 
     const setText = useCallback(
-        (evt) => {
-            if(name) {
-                dispatch({type: 'setText', payload: evt.target.value})
-            }
-        }, [name]
+        (evt) => dispatch({type: 'setText', payload: evt.target.value}),
+        [],
     );
 
     const setRating = useCallback(
-        (evt) => {
-            if(name) {
-                dispatch({type: 'setRating', payload: evt.target.value})
-            }
-        }, [name]
+        (evt) => dispatch({type: 'setRating', payload: evt.target.value}),
+        [],
     );
 
     return {

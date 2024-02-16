@@ -11,9 +11,9 @@ export const dishSlice = createSlice({
         selectDishById: (state, id) => state.entities[id], 
     },
     extraReducers: (builder) => builder
-    .addCase(getDishes.fulfilled, (state, {payload}) => {
-        entityAdapter.upsertMany(state, payload);
-    })
+        .addCase(getDishes.fulfilled, (state, {payload}) => {
+            entityAdapter.upsertMany(state, payload);
+        })
 })
 
 export const { selectDishIds, selectDishById } = dishSlice.selectors;

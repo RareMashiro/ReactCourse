@@ -4,7 +4,7 @@ import { selectRestaurantMenuById } from "../../redux/entities/restaurant";
 import { useEffect } from "react";
 import { getDishes } from "../../redux/entities/dish/thunks/get-dishes";
 
-export const MenuContainer = ({restaurantId}) => {
+export const MenuContainer = ({ restaurantId }) => {
     const dishIds = useSelector(state => selectRestaurantMenuById(state, restaurantId))
     
     const dispatch = useDispatch();

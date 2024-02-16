@@ -1,28 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ReviewForm } from "../review-form/component"
-import { Review } from "../review/component"
 import { UserContext } from "../../../contexts/user"
-import { useDispatch } from "react-redux"
-import { getReviews } from "../../redux/entities/review/thunks/get-reviews";
+import { ReviewContainer } from "../review/container"
 
-export const Reviews = ({reviews, key}) => {
+export const Reviews = ({ reviewIds, key }) => {
     const {user} = useContext(UserContext);
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getReviews())
-    }, [dispatch])
 
 
     return (
         <div>    
             <ul>
-                {reviews.map(id => {
+                {reviewIds.map(id => {
                         return (
                         <li className='review-item'>
-                            <Review id={id} />
+                            <ReviewContainer reviewId={id} />
                         </li>
                         )
                     })}

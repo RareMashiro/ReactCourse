@@ -11,12 +11,14 @@ export const restaurantSlice = createSlice({
         selectRestaurantById: (state, id) => state.entities[id],
         selectRestaurantMenuById: (state, id) => 
             restaurantSlice.getSelectors().selectRestaurantById(state, id)?.menu,
+        selectRestaurantReviewsById: (state, id) => 
+            restaurantSlice.getSelectors().selectRestaurantById(state, id)?.reviews,
         selectRestaurantIds: (state) => state.ids,
     },
     extraReducers: (builder) => builder
-    .addCase(getRestaurants.fulfilled, (state, {payload}) => {
-        entityAdapter.setAll(state, payload);
-    })
+        .addCase(getRestaurants.fulfilled, (state, {payload}) => {
+            entityAdapter.setAll(state, payload);
+        })
 });
 
-export const { selectRestaurantById, selectRestaurantIds, selectRestaurantMenuById } = restaurantSlice.selectors;
+export const { selectRestaurantById, selectRestaurantIds, selectRestaurantMenuById, selectRestaurantReviewsById } = restaurantSlice.selectors;
