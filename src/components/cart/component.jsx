@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import { Dish } from "../dish/component"
 
 export const Cart = ({productIds}) => {
     return (
         <div>
-            {productIds?.length ? productIds.map(productId => <Dish id={productId}/>) 
+            {productIds?.length ? productIds.map(productId => <Dish dish={productId}/>) 
             : 'Empty'}
         </div>
     )

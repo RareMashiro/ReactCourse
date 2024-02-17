@@ -3,11 +3,13 @@
 import { DishContainer } from "../dish/container";
 
 export const Menu = ({dishIds}) => {
+    console.log(dishIds);
+
     return (
         <ul className="menu">
             {dishIds.map(id => {
                 return (
-                    <li><DishContainer dishId={id}/></li>
+                    <li><DishContainer dish={id}/></li>
                 );
             })}
         </ul>

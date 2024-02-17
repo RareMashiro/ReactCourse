@@ -11,7 +11,7 @@ export const MenuContainer = ({ restaurantId }) => {
 
     useEffect(() => {
         dispatch(getDishes(restaurantId));
-    }, [restaurantId]);
+    }, [restaurantId, dispatch]);
 
     if(!dishIds?.length) {
         return null;

@@ -1,13 +1,7 @@
-import { useSelector } from "react-redux"
-import { selectDishById } from "../../redux/entities/dish";
+/* eslint-disable react/prop-types */
+//import { selectDishById } from "../../redux/entities/dish";
 import { Dish } from "./component";
 
-export const DishContainer = ({ dishId }) => {
-    const dish = useSelector(state => selectDishById(state, dishId));
-
-    if(!dish) {
-        return <>Loading...</>;
-    }
-
+export const DishContainer = ({ dish }) => {
     return <Dish dish={dish} />
 }
