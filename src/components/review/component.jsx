@@ -5,6 +5,7 @@ import { selectUserById } from "../../redux/entities/user";
 
 export const Review = ({ review }) => {
     const user = useSelector((state) => selectUserById(state, review.userId));
+    console.log(review);
 
     return (
         <>

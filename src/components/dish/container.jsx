@@ -3,5 +3,10 @@
 import { Dish } from "./component";
 
 export const DishContainer = ({ dish }) => {
+    
+    if(!dish) {
+        return <div>Loading...</div>
+    }
+    
     return <Dish dish={dish} />
 }

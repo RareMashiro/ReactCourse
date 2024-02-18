@@ -5,17 +5,17 @@ import { ReviewForm } from "../review-form/component"
 import { UserContext } from "../../../contexts/user"
 import { ReviewContainer } from "../review/container"
 
-export const Reviews = ({ reviewIds, key }) => {
+export const Reviews = ({ reviews, key }) => {
     const {user} = useContext(UserContext);
 
 
     return (
         <div>    
             <ul>
-                {reviewIds.map(id => {
+                {reviews.map((review) => {
                         return (
                         <li className='review-item'>
-                            <ReviewContainer reviewId={id} />
+                            <ReviewContainer review={review} />
                         </li>
                         )
                     })}
