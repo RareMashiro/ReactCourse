@@ -9,8 +9,7 @@ export const ReviewForm = ({initialState, userName, onSave, key}) => {
     return (   
         <div className={styles.main} key={key}>
             <div className={styles.section}>
-                <label htmlFor='name' className={styles.label}>Name: </label>
-                <input id='name' type='text' className={styles.user} value={userName} disabled='true' />
+                <span className={styles.userName}>{userName}</span>
             </div>
             <div className={styles.section}>
                 <label htmlFor="text" className={styles.label}>Text: </label>

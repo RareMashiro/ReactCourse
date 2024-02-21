@@ -15,7 +15,7 @@ export const Restaurant = ({ restaurant }) => {
             <MenuContainer restaurantId={restaurant.id} />
             <h3 className='review-title'><span>Reviews</span></h3>
             <ReviewsContainer restaurantId={restaurant.id} key={restaurant}/>
-            <CreateReviewFormContainer restautantId={restaurant.id}/>
+            <CreateReviewFormContainer restaurantId={restaurant.id}/>
         </div>
     )
 }

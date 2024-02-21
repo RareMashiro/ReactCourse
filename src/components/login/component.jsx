@@ -8,7 +8,7 @@ export const Login = () => {
     const [newName, setNewName] = useState();
     const {user, setUser} = useContext(UserContext);
 
-    const alarm = () => {
+    const complete = () => {
         const name = document.getElementById('newName').value;
         const mail = document.getElementById('newMail').value;
         if(name && mail) {
@@ -28,10 +28,10 @@ export const Login = () => {
     return (
         <div>
             {isOpen && (
-                <ModalLogin onClose={() => setIsOpen(false)} onSubmit={alarm}>
-                    <label htmlFor="name">Name: </label>
-                    <input id="newName" type="text" value={newName} onChange={(evt) => setNewName(evt.target.value)}></input>
-                    <label htmlFor="mail">Mail: </label>
+                <ModalLogin onClose={() => setIsOpen(false)} onSubmit={complete}>
+                    <label htmlFor="newName">Name: </label>
+                    <input id="newName" type="text" onChange={(evt) => setNewName(evt.target.value)}></input>
+                    <label htmlFor="newMail">Mail: </label>
                     <input id="newMail" type="email"></input>
                 </ModalLogin>
             )}

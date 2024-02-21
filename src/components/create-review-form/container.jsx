@@ -3,7 +3,7 @@ import { useCreateReviewMutation } from "../../redux/services/api";
 import { ReviewForm } from "../review-form/component"
 import { UserContext } from '../../../contexts/user';
 
-export const CreateReviewFormContainer = ({restautantId}) => {
+export const CreateReviewFormContainer = ({restaurantId}) => {
     const [createReview, { isLoading }] = useCreateReviewMutation();
     const {user} = useContext(UserContext);
 
@@ -17,14 +17,17 @@ export const CreateReviewFormContainer = ({restautantId}) => {
     
     return (
         <ReviewForm 
-            key={restautantId}
+            key={restaurantId}
             userName={user?.name}
             onSave={
                 newReview => {
-                    createReview({restautantId, newReview: {...newReview, userId: user.id}})
+                    createReview({
+                        restaurantId, 
+                        newReview: {...newReview, userId: user.id}
+                    })
                     console.log('Отзыв создан')
                 }
-            } 
+            }
         />
     )
 }
