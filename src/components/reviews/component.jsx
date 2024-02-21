@@ -11,10 +11,10 @@ export const Reviews = ({reviews, key}) => {
     return (
         <div>    
             <ul>
-                {reviews.map(pos => {
+                {reviews.map(id => {
                         return (
                         <li className='review-item'>
-                            <Review review={pos} />
+                            <Review id={id} />
                         </li>
                         )
                     })}

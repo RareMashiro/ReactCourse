@@ -3,12 +3,15 @@
 import { Dish } from "../dish/component"
 
 export const Menu = ({menu}) => {
+    // console.log(menu);
+
     return (
         <ul className="menu">
-            {menu.map(pos => {
+            {menu.map(id => {
+                // console.log(id);
                 return (
-                    <li><Dish dish={pos} /></li>
-                )
+                    <li><Dish id={id} /></li>
+                );
             })}
         </ul>
     )

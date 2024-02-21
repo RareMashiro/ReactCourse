@@ -6,8 +6,8 @@
     left: 45%;
     margin: auto;
     padding: 0.8em 0.8em;
-    background-color: black;
-    color: white;
+    background-color: gold;
+    color: black;
     border: 1px solid white;
     border-radius: 5px;
     display: flex;
@@ -31,13 +31,6 @@ input {
 .modalButton > Button {
     width: 50%;
     text-align: center;
-    background-color: black;
-    border-color: white;
-    color: white;
-}
-
-.modalButton > Button:hover {
-    border-color: black;
 }
 
 .modalButton > * + * {

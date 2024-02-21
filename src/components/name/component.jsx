@@ -1,5 +1,5 @@
-export const Name = ({name}) => {
+export const Name = ({place}) => {
     return (
-        <h1>{name}</h1>
+        <h1>{place.name}</h1>
     )
 }

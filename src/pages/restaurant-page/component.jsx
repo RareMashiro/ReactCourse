@@ -1,23 +1,24 @@
 import { useState } from "react";
 import { RestaurantTabs } from "../../components/restaurant-tabs/component"
 import { Restaurant } from "../../components/restaurant/component"
-import { restaurants } from "../../../materials/mock"
+import { useSelector } from "react-redux";
+import { selectRestaurantIds } from "../../../redux/entities/restaurant/selectors";
 
 export const RestaurantPage = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState();
-    
-    const activeRestaurant = restaurants.find(
-        ({id}) => id === activeRestaurantId
+    const restaurantIds = useSelector(selectRestaurantIds);
+
+    const activeRestaurant = restaurantIds.find(
+        id => id === activeRestaurantId
     )
     
     return (
         <div>
             <RestaurantTabs 
-                restaurants={restaurants} 
                 onSelect={setActiveRestaurantId}
             />
             {activeRestaurant && 
-                <Restaurant restaurant={activeRestaurant} key={activeRestaurantId}
+                <Restaurant id={activeRestaurant}
             />}
         </div>
     )
