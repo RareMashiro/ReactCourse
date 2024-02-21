@@ -1,25 +1,33 @@
-import { useState } from "react";
-import { RestaurantTabs } from "../../components/restaurant-tabs/component"
-import { Restaurant } from "../../components/restaurant/component"
-import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../../redux/entities/restaurant/selectors";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRestaurants } from "../../redux/entities/restaurant/thunks/get-restaurants";
+import { selectIsLoading } from "../../redux/ui/request";
+import { RestaurantContainer } from "../../components/restaurant/container";
+import { RestaurantTabsContainer } from "../../components/restaurant-tabs/container";
 
 export const RestaurantPage = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState();
-    const restaurantIds = useSelector(selectRestaurantIds);
+    const [requestId, setRequestId] = useState(null);
+    const isLoading = useSelector(state => requestId && selectIsLoading(state, requestId));
 
-    const activeRestaurant = restaurantIds.find(
-        id => id === activeRestaurantId
-    )
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        setRequestId(dispatch(getRestaurants()).requestId);
+    }, [dispatch]);
     
     return (
-        <div>
-            <RestaurantTabs 
-                onSelect={setActiveRestaurantId}
-            />
-            {activeRestaurant && 
-                <Restaurant id={activeRestaurant}
-            />}
-        </div>
+        <>
+            {isLoading ? <div>Loading...</div> : 
+                <div>
+                    <RestaurantTabsContainer 
+                        onSelect={setActiveRestaurantId}
+                    />
+                    {activeRestaurantId && 
+                        <RestaurantContainer restaurantId={activeRestaurantId}
+                    />}
+                </div>
+            }
+        </>
     )
 }

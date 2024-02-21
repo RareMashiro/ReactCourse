@@ -1,10 +1,10 @@
-.main {
-    display: flex;
-    justify-content: space-between;
-}
-
 .quantity {
     padding: 0.25em 0.5em;
     border: 1px solid black;
     border-radius: 0.2em;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
 }

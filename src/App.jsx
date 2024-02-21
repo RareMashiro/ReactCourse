@@ -4,7 +4,7 @@ import { UserContext } from "../contexts/user"
 import { Layout } from "./components/layout/component"
 import { RestaurantPage } from "./pages/restaurant-page/component"
 import { Provider } from "react-redux"
-import { store } from "../redux"
+import { store } from "./redux"
 
 export const App = () => {
     const [user, setUser] = useState();

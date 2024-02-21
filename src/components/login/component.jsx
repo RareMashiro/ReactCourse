@@ -32,7 +32,7 @@ export const Login = () => {
                     <input id="newMail" type="email"></input>
                 </ModalLogin>
             )}
-            { user ? <><span>{newName}</span> | <Button onClick={exit}>Logout</Button></> 
+            { user ? <> | <span><b>{newName}</b></span> | <Button onClick={exit}>Logout</Button></> 
             : <Button onClick={() => setIsOpen(true)}>Login</Button> }
         </div>
     )

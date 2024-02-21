@@ -8,7 +8,7 @@ export const normalizedRestaurants = [
       "bd129641-c0eb-432b-84b6-8b81d2930358",
     ],
     reviews: [
-      "5909796d-5030-4e36-adec-68b8f9ec2d96",
+      //"5909796d-5030-4e36-adec-68b8f9ec2d96",
       "429dea85-11dd-4054-a31e-c60c92e17255",
     ],
   },
