@@ -3,7 +3,6 @@ import styles from './styles.module.scss';
 import { Counter } from "../counter/component"
 
 export const Dish = ({ dish }) => {
-    
     if(!dish) {
         return <>Loading...</>
     }
@@ -11,7 +10,7 @@ export const Dish = ({ dish }) => {
     return (
         <div className={styles.main}>
             <p>{[dish.name, ': ', dish.price, '$']}</p>
-            <Counter dish={dish} />
+            <Counter dishId={dish.id} />
         </div>
     )
 }

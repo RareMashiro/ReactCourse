@@ -12,7 +12,10 @@ export const Login = () => {
         const name = document.getElementById('newName').value;
         const mail = document.getElementById('newMail').value;
         if(name && mail) {
-            setUser(newName);
+            setUser({
+                name: newName,
+                id: "dfb982e9-b432-4b7d-aec6-7f6ff2e6af54",
+            });
             setIsOpen(false);
         }
     }
@@ -27,7 +30,7 @@ export const Login = () => {
             {isOpen && (
                 <ModalLogin onClose={() => setIsOpen(false)} onSubmit={alarm}>
                     <label htmlFor="name">Name: </label>
-                    <input id="newName" type="text" onChange={(evt) => setNewName(evt.target.value)}></input>
+                    <input id="newName" type="text" value={newName} onChange={(evt) => setNewName(evt.target.value)}></input>
                     <label htmlFor="mail">Mail: </label>
                     <input id="newMail" type="email"></input>
                 </ModalLogin>

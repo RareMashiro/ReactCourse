@@ -1,14 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { useContext } from "react"
-import { ReviewForm } from "../review-form/component"
-import { UserContext } from "../../../contexts/user"
 import { ReviewContainer } from "../review/container"
 
-export const Reviews = ({ reviews, key }) => {
-    const {user} = useContext(UserContext);
-
-
+export const Reviews = ({ reviews }) => {
     return (
         <div>    
             <ul>
@@ -20,7 +15,6 @@ export const Reviews = ({ reviews, key }) => {
                         )
                     })}
             </ul>
-            {user && <ReviewForm key={key}/>}
         </div>
     )
 }

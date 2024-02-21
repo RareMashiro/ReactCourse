@@ -4,20 +4,20 @@ import { Button } from "../button/component"
 import styles from "./styles.module.scss"
 import { decrement, increment, selectProductAmountById } from "../../redux/ui/cart"
 
-export const Counter = ({ dish, min = 0, max = 5 }) => {
+export const Counter = ({ dishId, min = 0, max = 5 }) => {
     const amount = useSelector(state => 
-        selectProductAmountById(state, dish.id)
+        selectProductAmountById(state, dishId)
     );
 
     const dispatch = useDispatch();
     
     return (
         <div>
-            <Button onClick={() => dispatch(decrement(dish.id))} type='small' disabled={amount === min}>
+            <Button onClick={() => dispatch(decrement(dishId))} type='small' disabled={amount === min}>
                 -
             </Button>
                 <span className={styles.quantity}>{amount}</span>
-            <Button onClick={() => dispatch(increment(dish.id))} type='small' disabled={amount === max}>
+            <Button onClick={() => dispatch(increment(dishId))} type='small' disabled={amount === max}>
                 +
             </Button>
         </div>

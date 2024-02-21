@@ -3,7 +3,8 @@ import { Restaurant } from "./component"
 import { useGetRestaurantsQuery } from "../../redux/services/api"
 
 export const RestaurantContainer = ({restaurantId}) => {
-    const {data: restaurant} = useGetRestaurantsQuery(undefined, {selectFromResult: result => ({
+    const {data: restaurant} = useGetRestaurantsQuery(undefined, {
+        selectFromResult: result => ({
             ...result, 
             data: result.data.find(({id}) => id === restaurantId),
         }),
