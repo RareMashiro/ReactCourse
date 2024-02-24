@@ -2,13 +2,24 @@
     font-size: 1.6rem;
 }
 
+.large:disabled {
+    background-color: gold;
+    border-color: initial;
+    color: black;
+    cursor: default;
+    transition: none;
+}
+
 .small:disabled {
     background-color: gold;
+    border-color: black;
     color: black;
+    cursor: default;
+    transition: none;
 }
 
 .small:disabled:hover {
-    border-color: initial;
+    border-color: black;
 }
 
 Button {
@@ -17,6 +28,7 @@ Button {
     padding: 0.4em 1.6em;
     border-radius: 0.4em;
     cursor: pointer;
+    transition: border-color 0.25s;
 }
 
 Button:hover {
@@ -24,6 +36,6 @@ Button:hover {
 }
 
 Button:active {
-    background-color: gold;
+    background-color: white;
     color: black;
 }

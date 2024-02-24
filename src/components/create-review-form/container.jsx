@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { useCreateReviewMutation } from "../../redux/services/api";
 import { ReviewForm } from "../review-form/component"
@@ -17,6 +18,7 @@ export const CreateReviewFormContainer = ({restaurantId}) => {
     
     return (
         <ReviewForm 
+            flag={false}
             key={restaurantId}
             userName={user?.name}
             onSave={

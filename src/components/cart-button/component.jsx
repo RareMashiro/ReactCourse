@@ -16,7 +16,7 @@ export const CartButton = ({amount}) => {
         }
         console.log(buttonRef);
         const {bottom, left} = buttonRef.current.getBoundingClientRect();
-        setCoordinates({left, top: bottom});
+        setCoordinates({right: -left, top: bottom});
     }
 
     return (

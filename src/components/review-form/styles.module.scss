@@ -27,3 +27,7 @@
 input:active {
     border: 2px solid black;
 }
+
+.edit > * + *{
+    margin-left: 0.75em;
+}

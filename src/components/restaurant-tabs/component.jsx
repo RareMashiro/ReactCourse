@@ -1,15 +1,26 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-import { RestaurantTabContainer } from "../restaurant-tab/container"
+import { NavLink } from "react-router-dom";
 import { Tab } from "../tab/component"
+import styles from "./styles.module.scss";
+
 
 export const RestaurantTabs = ({ restaurants, onSelect }) => {
         
     
     return (
-        <div>
+        <div className={styles.tabs}>
             {restaurants.map(({name, id}) => (
-                <Tab title={name} className="large" onClick={() => onSelect(id)} />
+                <NavLink to={`/restaurants/${id}`}>
+                    {({ isActive }) => (
+                        <Tab 
+                            title={name} 
+                            className="large" 
+                            onClick={() => onSelect(id)} 
+                            disabled={isActive}
+                        />
+                    )}
+                </NavLink>
             ))}
         </div>
     )

@@ -14,13 +14,16 @@ export const Review = ({ review, user }) => {
                     review={review} 
                     user={user} 
                     onUpdateFinished={() => setIsEditMode(false)}
+                    exit={() => setIsEditMode(!isEditMode)}
                 /> 
             ) : (
-                <p>
-                    {[user.name, ': ', <b>Rating: </b>, review.rating, ' | ', <b>Text: </b>, review.text]}
-                </p>
+                <>    
+                    <p>
+                        {[user.name, ': ', <b>Rating: </b>, review.rating, ' | ', <b>Text: </b>, review.text]}
+                    </p>
+                    <Button onClick={() => setIsEditMode(!isEditMode)}>Edit</Button> 
+                </>
             )}
-            <Button onClick={() => setIsEditMode(!isEditMode)}>Edit</Button> 
         </>
     )
 }
