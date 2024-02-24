@@ -1,26 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { useContext } from "react"
-import { ReviewForm } from "../review-form/component"
-import { UserContext } from "../../../contexts/user"
 import { ReviewContainer } from "../review/container"
 
-export const Reviews = ({ reviewIds, key }) => {
-    const {user} = useContext(UserContext);
-
-
+export const Reviews = ({ reviews }) => {
     return (
         <div>    
             <ul>
-                {reviewIds.map(id => {
+                {reviews.map((review) => {
                         return (
                         <li className='review-item'>
-                            <ReviewContainer reviewId={id} />
+                            <ReviewContainer review={review} />
                         </li>
                         )
                     })}
             </ul>
-            {user && <ReviewForm key={key}/>}
         </div>
     )
 }

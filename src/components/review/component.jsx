@@ -1,22 +1,26 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-import { useSelector } from "react-redux";
-import { selectUserById } from "../../redux/entities/user";
+import { useState } from "react";
+import { Button } from "../button/component";
+import { UpdateReviewFormContainer } from "../update-review-form/container";
 
-export const Review = ({ review }) => {
-    const user = useSelector((state) => selectUserById(state, review.userId));
+export const Review = ({ review, user }) => {
+    const [isEditMode, setIsEditMode] = useState(false);
 
     return (
         <>
-            {user ?
+            {isEditMode ? (
+                <UpdateReviewFormContainer 
+                    review={review} 
+                    user={user} 
+                    onUpdateFinished={() => setIsEditMode(false)}
+                /> 
+            ) : (
                 <p>
                     {[user.name, ': ', <b>Rating: </b>, review.rating, ' | ', <b>Text: </b>, review.text]}
-                </p> 
-            : 
-                <p>
-                    {['*Secret*: ', <b>Rating: </b>, review.rating, ' | ', <b>Text: </b>, review.text]}
-                </p> 
-            }
+                </p>
+            )}
+            <Button onClick={() => setIsEditMode(!isEditMode)}>Edit</Button> 
         </>
     )
 }

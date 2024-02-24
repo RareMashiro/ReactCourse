@@ -9,7 +9,7 @@ export const ModalLogin = ({children, onClose, onSubmit}) => {
     return createPortal(
         <div className={styles.modal}>
             <h3 className={styles.authorization}>Authorization</h3>
-            {children}
+                {children}
             <div className={styles.modalButton}>
                 <Button onClick={onSubmit}>Submit</Button>
                 <Button onClick={onClose}>Close</Button>

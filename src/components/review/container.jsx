@@ -1,13 +1,22 @@
-import { useSelector } from "react-redux"
-import { selectReviewById } from "../../redux/entities/review"
+/* eslint-disable react/prop-types */
+import { useGetUsersQuery } from "../../redux/services/api";
 import { Review } from "./component";
 
-export const ReviewContainer = ({ reviewId }) => {
-    const review = useSelector(state => selectReviewById(state, reviewId));
+export const ReviewContainer = ({ review }) => {
+    const {data: user, isLoading} = useGetUsersQuery(undefined, {
+        selectFromResult: result => ({
+            ...result, 
+            data: result.data?.find(({id}) => id === review.userId),
+        }),
+    });
 
-    if(!review) {
+    if(isLoading) {
         return <>Loading...</>;
     }
 
-    return <Review review={review} />;
+    if(!review || !user) {
+        return null;
+    }
+
+    return <Review review={review} user={user}/>;
 }

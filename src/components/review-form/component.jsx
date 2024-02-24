@@ -1,26 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useContext } from 'react';
 import styles from './styles.module.scss';
 import { useReviewForm } from './useReviewForm';
-import { UserContext } from '../../../contexts/user';
+import { Button } from '../button/component';
 
-export const ReviewForm = ({key}) => {
-    const {form, setText, setRating} = useReviewForm();
-    const {user} = useContext(UserContext);
+export const ReviewForm = ({initialState, userName, onSave, key}) => {
+    const {form, setText, setRating} = useReviewForm(initialState);
 
     return (   
         <div className={styles.main} key={key}>
-            {/* <div className={styles.section}>
-                <label htmlFor="name" className={styles.label}>Name: </label>
-                <input 
-                    id="name" 
-                    type="text" 
-                    value={form.name} 
-                    onChange={setName} /> 
-            </div> */}
             <div className={styles.section}>
-                <label htmlFor='name' className={styles.label}>Name: </label>
-                <input id='name' type='text' className={styles.user} value={user} disabled='true' />
+                <span className={styles.userName}>{userName}</span>
             </div>
             <div className={styles.section}>
                 <label htmlFor="text" className={styles.label}>Text: </label>
@@ -40,6 +29,7 @@ export const ReviewForm = ({key}) => {
                     value={form.rating} 
                     onChange={setRating} /> 
             </div>
+            <Button onClick={() => onSave(form)}>Save</Button>
         </div>
     )
 }
