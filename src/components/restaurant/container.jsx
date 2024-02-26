@@ -1,18 +1,16 @@
 /* eslint-disable react/prop-types */
-import { Restaurant } from "./component"
 import { useGetRestaurantsQuery } from "../../redux/services/api"
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
+import { MenuTab } from "../menu-tab/component";
+import { ReviewsTab } from "../reviews-tab/component";
 
 export const RestaurantContainer = () => {
     const { restaurantId } = useParams();
 
-    const {data: load} = useGetRestaurantsQuery();
-    console.log(load);
-
     const {data: restaurant, isLoading} = useGetRestaurantsQuery(undefined, {
         selectFromResult: result => ({
             ...result, 
-            data: result.data.find(({id}) => restaurantId === id),
+            data: result.data?.find(({id}) => restaurantId === id),
         }),
     });
     
@@ -24,5 +22,11 @@ export const RestaurantContainer = () => {
         return <>Loading...</>;
     }
 
-    return <Restaurant restaurant={restaurant} />
+    return (
+        <>
+            <MenuTab restaurantId={restaurantId}/>
+            <ReviewsTab restaurantId={restaurantId}/>
+            <Outlet />
+        </>
+    );
 }

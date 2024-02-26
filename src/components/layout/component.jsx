@@ -11,7 +11,6 @@ export const Layout = () => {
         <div>
             <Header>Header</Header>
                 <div className={styles.content}>
-                    {/* {children} */}
                     <Outlet />
                 </div>
             <Footer>Footer</Footer>

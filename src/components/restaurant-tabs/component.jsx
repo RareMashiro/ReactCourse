@@ -5,7 +5,7 @@ import { Tab } from "../tab/component"
 import styles from "./styles.module.scss";
 
 
-export const RestaurantTabs = ({ restaurants, onSelect }) => {
+export const RestaurantTabs = ({ restaurants }) => {
         
     
     return (
@@ -16,7 +16,6 @@ export const RestaurantTabs = ({ restaurants, onSelect }) => {
                         <Tab 
                             title={name} 
                             className="large" 
-                            onClick={() => onSelect(id)} 
                             disabled={isActive}
                         />
                     )}
