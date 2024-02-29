@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
-//import { selectDishById } from "../../redux/entities/dish";
-import { Dish } from "./component";
+import { NavLink } from "react-router-dom";
+import { useGetDishByIdQuery } from "../../redux/services/api";
 
 export const DishContainer = ({ dish }) => {
-    
-    if(!dish) {
+
+    const {data: currDish} = useGetDishByIdQuery(dish?.id);
+
+    console.log(currDish);
+
+    if(!currDish) {
         return <div>Loading...</div>
     }
     
-    return <Dish dish={dish} />
+    return (
+        <NavLink to={`/dishes/${currDish.id}`}>
+            <span>{currDish.name}</span>
+        </NavLink>
+    )
 }

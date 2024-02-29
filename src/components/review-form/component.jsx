@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import { useReviewForm } from './useReviewForm';
 import { Button } from '../button/component';
 
-export const ReviewForm = ({initialState, userName, onSave, key}) => {
+export const ReviewForm = ({initialState, userName, onSave, key, onClick, flag}) => {
     const {form, setText, setRating} = useReviewForm(initialState);
 
     return (   
@@ -29,7 +29,10 @@ export const ReviewForm = ({initialState, userName, onSave, key}) => {
                     value={form.rating} 
                     onChange={setRating} /> 
             </div>
-            <Button onClick={() => onSave(form)}>Save</Button>
+            <div className={styles.edit}>
+                <Button onClick={() => onSave(form)}>Save</Button>
+                {flag && <Button onClick={onClick}>Exit</Button>}
+            </div>
         </div>
     )
 }
