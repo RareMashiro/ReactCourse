@@ -27,7 +27,7 @@
     background-color: black;
     padding: 0.25em 0.5em;
     border-radius: 0.3em;
-    transition: color, background-color 0.25s;
+    transition: color 0.25s, background-color 0.25s;
 }
 
 .navigation > *:hover {

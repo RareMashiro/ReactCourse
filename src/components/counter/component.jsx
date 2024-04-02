@@ -13,11 +13,11 @@ export const Counter = ({ dishId, min = 0, max = 5 }) => {
     
     return (
         <div>
-            <Button onClick={() => dispatch(decrement(dishId))} type='small' disabled={amount === min}>
+            <Button type="switch" onClick={() => dispatch(decrement(dishId))} disabled={amount === min}>
                 -
             </Button>
                 <span className={styles.quantity}>{amount}</span>
-            <Button onClick={() => dispatch(increment(dishId))} type='small' disabled={amount === max}>
+            <Button type="switch" onClick={() => dispatch(increment(dishId))} disabled={amount === max}>
                 +
             </Button>
         </div>

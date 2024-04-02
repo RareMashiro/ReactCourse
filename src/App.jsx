@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-key */
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { CreateReviewFormContainer } from "./components/create-review-form/container";
 import { DishDescriptionContainer } from "./components/dish-description/container";
 import { RestaurantContainer } from "./components/restaurant/container"
+import { CreateReviewPage } from "./pages/create-review-page/component";
 import { ReviewsContainer } from "./components/reviews/container";
 import { RestaurantPage } from "./pages/restaurant-page/component"
 import { MenuContainer } from "./components/menu/container";
@@ -54,6 +56,16 @@ const router = createBrowserRouter([
                     {
                         path: ":dishId",
                         element: <DishDescriptionContainer />
+                    },
+                ]
+            },
+            {
+                path: "createReview",
+                element: <CreateReviewPage />,
+                children: [
+                    {
+                        path: ":restaurantId",
+                        element: <CreateReviewFormContainer />
                     },
                 ]
             },

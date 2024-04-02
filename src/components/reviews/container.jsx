@@ -1,10 +1,13 @@
 import { Reviews } from "./component";
 import { useGetReviewsQuery } from "../../redux/services/api";
 import { useParams } from "react-router-dom";
-import { CreateReviewFormContainer } from "../create-review-form/container";
+import { CreateReviewTab } from "../create-review-tab/component";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts/user";
 
 export const ReviewsContainer = () => {
     const { restaurantId } = useParams();
+    const {user} = useContext(UserContext);
     
     const {data: reviews, isFetching} = useGetReviewsQuery(restaurantId);
 
@@ -19,7 +22,7 @@ export const ReviewsContainer = () => {
     return (
         <>
             <Reviews reviews={reviews} restaurantId={restaurantId}/>
-            <CreateReviewFormContainer restaurantId={restaurantId}/>
+            {user && <CreateReviewTab />}
         </>
     )
 }

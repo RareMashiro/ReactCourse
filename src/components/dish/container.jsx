@@ -6,11 +6,11 @@ export const DishContainer = ({ dish }) => {
 
     const {data: currDish} = useGetDishByIdQuery(dish?.id);
 
-    console.log(currDish);
-
     if(!currDish) {
         return <div>Loading...</div>
     }
+    
+    console.log(currDish);
     
     return (
         <NavLink to={`/dishes/${currDish.id}`}>
