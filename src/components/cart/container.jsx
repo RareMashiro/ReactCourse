@@ -4,7 +4,6 @@ import { Cart } from "./component";
 
 export const CartContainer = () => {
     const productIds = useSelector(selectCartProductIds);
-    console.log(productIds);
 
     return (
         <Cart productIds={productIds} />
