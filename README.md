@@ -18,12 +18,15 @@
 <li>Внести полную стилизацию всех элементов сайта (в настоящий момент присутствуют только базовые стили для наглядности решений)</li>
 
 <h2>Текущее визуальное состояние проекта</h2>
+
 <li>Внешний вид главной вкладки</li>
 
 <img src='https://github.com/RareMashiro/ReactCourse/blob/main-hw/images/mainPage.png'/>
+
 <li>Внешний вид вкладки с ресторанами</li>
 
 <img src='https://github.com/RareMashiro/ReactCourse/blob/main-hw/images/restaurantPage.png'/>
+
 <li>Внешний вид вкладки создания отзыва</li>
 
 <img src='https://github.com/RareMashiro/ReactCourse/blob/main-hw/images/reviewPage.png'/>
