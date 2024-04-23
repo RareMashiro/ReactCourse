@@ -34,6 +34,18 @@ export const api = createApi(
                     url: 'users',
                 }),
             }),
+            getDishById: builder.query({
+                query: (dishId) => ({
+                    url: `dish/${dishId}`,
+                    params: {dishId},
+                })
+            }),
+            getRestaurantById: builder.query({
+                query: (restaurantId) => ({
+                    url: `restaurant/${restaurantId}`,
+                    params: {restaurantId},
+                })
+            }),
             createReview: builder.mutation({
                 query: ({restaurantId, newReview}) => ({
                     url: `review/${restaurantId}`,
@@ -63,6 +75,8 @@ export const {
     useGetDishesQuery, 
     useGetReviewsQuery, 
     useGetUsersQuery,
+    useGetDishByIdQuery,
+    useGetRestaurantByIdQuery,
     useCreateReviewMutation,
     useUpdateReviewMutation,
 } = api;

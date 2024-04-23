@@ -24,7 +24,6 @@ const reducer = (state, {type, payload}) => {
 
 export const useReviewForm = (initialValue = DEFAULT) => {
     const [form, dispatch] = useReducer(reducer, initialValue);
-    console.log(form);
 
     const setText = useCallback(
         (evt) => dispatch({type: 'setText', payload: evt.target.value}),

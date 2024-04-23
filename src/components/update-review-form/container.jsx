@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useUpdateReviewMutation } from "../../redux/services/api";
 import { ReviewForm } from "../review-form/component"
 
-export const UpdateReviewFormContainer = ({review, user, onUpdateFinished}) => {
+export const UpdateReviewFormContainer = ({review, user, onUpdateFinished, exit}) => {
     const [updateReview, { isLoading, isSuccess }] = useUpdateReviewMutation();
 
     useEffect(() => {
@@ -24,6 +24,7 @@ export const UpdateReviewFormContainer = ({review, user, onUpdateFinished}) => {
     
     return (
         <ReviewForm 
+            flag={true}
             initialState={{text, rating}}
             userName={user?.name}
             onSave={
@@ -35,6 +36,7 @@ export const UpdateReviewFormContainer = ({review, user, onUpdateFinished}) => {
                     console.log('Отзыв изменен')
                 }
             } 
+            onClick={exit}
         />
     )
 }

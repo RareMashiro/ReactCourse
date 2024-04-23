@@ -1,29 +1,66 @@
-.large {
-    font-size: 1.6rem;
-}
-
-.small:disabled {
-    background-color: gold;
-    color: black;
-}
-
-.small:disabled:hover {
-    border-color: initial;
-}
-
 Button {
     background-color: black;
     color: white;
     padding: 0.4em 1.6em;
     border-radius: 0.4em;
     cursor: pointer;
-}
-
-Button:hover {
-    border-color: white;
+    transition: border-color 0.25s;
 }
 
 Button:active {
+    background-color: white;
+    color: black;
+}
+
+.large {
+    border: none;
+    font-size: 1.6rem;
     background-color: gold;
     color: black;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.large:hover {
+    background-color: black;
+    color: white;
+}
+
+.large:disabled {
+    background-color: white;
+    color: black;
+    cursor: default;
+    transition: none;
+}
+
+.small:hover {
+    border-color: white;
+}
+
+.small:disabled {
+    background-color: gold;
+    border-color: white;
+    color: black;
+    cursor: default;
+    transition: none;
+}
+
+.switch {
+    background-color: gold;    
+    color: black;
+    padding: 0.4em 1.6em;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.switch:hover {
+    border-color: white;
+}
+
+.switch:disabled {
+    background-color: white;
+    border: none;
+    color: black;
+    cursor: default;
+    transition: none;
 }

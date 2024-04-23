@@ -14,6 +14,7 @@
 .userName {
     font-weight: bold;
     background-color: gold;
+    color: black;
     border-radius: 0.4em;
     max-width: fit-content;
     padding: 0.25em 0.5em;
@@ -26,4 +27,8 @@
  
 input:active {
     border: 2px solid black;
+}
+
+.edit > * + *{
+    margin-left: 0.75em;
 }

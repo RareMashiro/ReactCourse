@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
-import { useContext } from "react"
 import { ReviewContainer } from "../review/container"
 
 export const Reviews = ({ reviews }) => {

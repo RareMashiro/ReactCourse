@@ -1,0 +1,40 @@
+.area {
+    color: black;
+    color: white;
+}
+
+.mainHeader {
+    padding: 0 25%;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.intro {
+    font-size: 2em;
+}
+
+.hello {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.mainContent {
+    border-top: 1px solid grey;
+
+}
+
+.preview {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logoPicture {
+    width: 25em;
+    height: 25em;
+}
